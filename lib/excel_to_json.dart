@@ -27,9 +27,9 @@ class ExcelToJson {
         try {
           if (i == 0) {
             keys = row;
-            print(validateHeader(keys, row));
+
             if (!(validateHeader(keys, row))) {
-              return null;
+              throw ExcelException("Invalid Headers");
             }
             i++;
           } else {
