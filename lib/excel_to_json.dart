@@ -140,9 +140,9 @@ class ExcelToJson {
         if (row[j]?.value.toString() == validHeader[j]) {
           j++;
           continue;
+        } else {
+          throw ExcelException("Invalid Headers");
         }
-      } else {
-        throw ExcelException("Invalid Headers");
       }
     }
     return true;
